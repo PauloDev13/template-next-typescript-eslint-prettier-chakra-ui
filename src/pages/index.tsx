@@ -1,9 +1,11 @@
 import type { NextPage } from 'next';
 
+import { Greet } from '~/components/Greet';
+
 const Home: NextPage = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Greet name={'Paulo Roberto'} />
     </div>
   );
 };
