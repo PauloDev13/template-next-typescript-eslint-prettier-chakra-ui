@@ -1,15 +1,19 @@
 interface OwnProps {
   name: string;
+  messageCount: number;
+  isLoggedIn: boolean;
 }
 
 type Props = OwnProps;
 
-export const Greet = ({ name }: Props) => {
+export const Greet = ({ name, messageCount, isLoggedIn }: Props) => {
   return (
-    <div
-      style={{ marginTop: '2rem', justifyContent: 'center', display: 'flex' }}
-    >
-      <h2>Bem vindo {name}! Você tem 10 mensagens não lidas</h2>
+    <div>
+      <h2>
+        {isLoggedIn
+          ? `Bem vindo ${name}! Você tem ${messageCount} mensagens não lidas`
+          : 'Bem vindo'}
+      </h2>
     </div>
   );
 };
