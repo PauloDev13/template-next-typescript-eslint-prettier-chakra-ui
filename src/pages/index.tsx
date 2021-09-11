@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 
 import { Button } from '~/components/Button';
+import { Container } from '~/components/Container';
 import { Greet } from '~/components/Greet';
 import { Heading } from '~/components/Heading';
 import { Input } from '~/components/Input';
@@ -57,6 +58,10 @@ const Home: NextPage = () => {
       />
       <br />
       <Input value={''} handleChange={(event) => console.log(event)} />
+      <br />
+      <Container
+        styles={{ border: '1px solid black', padding: '1rem', display: 'flex' }}
+      />
     </div>
   );
 };
