@@ -22,7 +22,10 @@
   },
   "rules": {
     "@next/next/no-document-import-in-page": "off",
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
     "semi": "error",
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": 0,
@@ -49,21 +52,42 @@
     "no-console": [
       "warn",
       {
-        "allow": ["warn", "error"]
+        "allow": [
+          "warn",
+          "error"
+        ]
       }
     ],
-    "import/no-duplicates": ["off", { "considerQueryString": true }],
+    "import/no-duplicates": [
+      "off",
+      {
+        "considerQueryString": true
+      }
+    ],
     "import-helpers/order-imports": [
       "warn",
       {
         "newlinesBetween": "always",
         "groups": [
-          ["/^react/"],
-          ["module"],
-          ["/^~//"],
-          ["parent", "sibling", "index"]
+          [
+            "/^react/"
+          ],
+          [
+            "module"
+          ],
+          [
+            "/^~//"
+          ],
+          [
+            "parent",
+            "sibling",
+            "index"
+          ]
         ],
-        "alphabetize": { "order": "asc", "ignoreCase": true }
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true
+        }
       }
     ]
   }

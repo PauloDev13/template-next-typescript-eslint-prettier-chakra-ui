@@ -1,12 +1,13 @@
 interface OwnProps {
   name: string;
-  messageCount: number;
+  messageCount?: number;
   isLoggedIn: boolean;
 }
 
 type Props = OwnProps;
 
 export const Greet = ({ name, messageCount, isLoggedIn }: Props) => {
+  !messageCount ? (messageCount = 0) : messageCount;
   return (
     <div>
       <h2>

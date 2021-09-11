@@ -1,8 +1,11 @@
 import type { NextPage } from 'next';
 
 import { Greet } from '~/components/Greet';
+import { Heading } from '~/components/Heading';
+import { Oscar } from '~/components/Oscar';
 import { Person } from '~/components/Person';
 import { PersonList } from '~/components/PersonList';
+import { Status } from '~/components/Status';
 
 const Home: NextPage = () => {
   const personName = {
@@ -33,11 +36,19 @@ const Home: NextPage = () => {
         flexDirection: 'column',
       }}
     >
-      <Greet name={'Paulo Roberto'} messageCount={20} isLoggedIn />
+      <Greet name={'Paulo Roberto'} messageCount={15} isLoggedIn />
       <br />
       <Person name={personName} />
       <br />
       <PersonList names={nameList} />
+      <br />
+      <Status status={'loading'} />
+      <br />
+      <Heading>Placeholder text</Heading>
+      <br />
+      <Oscar>
+        <Heading>Oscar goes to Denzel Washington</Heading>
+      </Oscar>
     </div>
   );
 };
