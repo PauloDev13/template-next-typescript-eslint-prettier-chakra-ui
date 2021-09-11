@@ -1,13 +1,10 @@
 import { FunctionComponent } from 'react';
 
-interface PersonProps {
-  name: {
-    first: string;
-    last: string;
-  };
-}
+import { PersonProps } from '~/components/interfaces';
 
-type Props = PersonProps;
+type Props = {
+  name: PersonProps;
+};
 
 export const Person: FunctionComponent<Props> = ({ name }) => {
   return (

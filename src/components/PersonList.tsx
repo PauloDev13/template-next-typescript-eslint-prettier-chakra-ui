@@ -1,13 +1,17 @@
 import { FunctionComponent } from 'react';
 
-interface PersonListProps {
-  names: {
-    first: string;
-    last: string;
-  }[];
-}
+import { PersonProps } from '~/components/interfaces';
 
-type Props = PersonListProps;
+// interface PersonListProps {
+//   names: {
+//     first: string;
+//     last: string;
+//   }[];
+// }
+
+type Props = {
+  names: PersonProps[];
+};
 
 export const PersonList: FunctionComponent<Props> = ({ names }) => {
   return (
