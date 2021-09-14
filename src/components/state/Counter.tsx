@@ -1,16 +1,22 @@
 import { useReducer } from 'react';
 
+import { Button } from '@chakra-ui/react';
+
 interface IState {
   count: number;
 }
 
-interface IAction {
-  type: string;
+interface IUpdateAction {
+  type: 'increment' | 'decrement';
   payload: number;
 }
 
+interface IResetAction {
+  type: 'reset';
+}
+
 type CounterState = IState;
-type CounterAction = IAction;
+type CounterAction = IUpdateAction | IResetAction;
 
 const initialState = { count: 0 };
 
@@ -24,6 +30,8 @@ function reducer(state: CounterState, action: CounterAction) {
       return {
         count: state.count - action.payload,
       };
+    case 'reset':
+      return initialState;
     default:
       return state;
   }
@@ -34,12 +42,21 @@ export const Counter = () => {
   return (
     <>
       Count: {state.count}
-      <button onClick={() => dispatch({ type: 'increment', payload: 10 })}>
+      <Button
+        colorScheme={'green'}
+        marginBottom={'1rem'}
+        onClick={() => dispatch({ type: 'increment', payload: 10 })}
+      >
         Increment 10
-      </button>
-      <button onClick={() => dispatch({ type: 'decrement', payload: 10 })}>
+      </Button>
+      <Button
+        colorScheme={'red'}
+        marginBottom={'1rem'}
+        onClick={() => dispatch({ type: 'decrement', payload: 10 })}
+      >
         Decrement 10
-      </button>
+      </Button>
+      <Button onClick={() => dispatch({ type: 'reset' })}>Reset</Button>
     </>
   );
 };
