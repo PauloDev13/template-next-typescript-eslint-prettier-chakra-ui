@@ -8,6 +8,8 @@ import { Input } from '~/components/Input';
 import { Oscar } from '~/components/Oscar';
 import { Person } from '~/components/Person';
 import { PersonList } from '~/components/PersonList';
+import { LoggedIn } from '~/components/state/LoggedIn';
+import { User } from '~/components/state/User';
 import { Status } from '~/components/Status';
 
 const Home: NextPage = () => {
@@ -39,16 +41,16 @@ const Home: NextPage = () => {
         flexDirection: 'column',
       }}
     >
-      <Greet name={'Paulo Roberto'} messageCount={15} isLoggedIn />
-      <br />
-      <Person name={personName} />
-      <br />
-      <PersonList names={nameList} />
-      <br />
-      <Status status={'loading'} />
-      <br />
-      <Heading>Placeholder text</Heading>
-      <br />
+      {/*<Greet name={'Paulo Roberto'} messageCount={15} isLoggedIn />*/}
+      {/*<br />*/}
+      {/*<Person name={personName} />*/}
+      {/*<br />*/}
+      {/*<PersonList names={nameList} />*/}
+      {/*<br />*/}
+      {/*<Status status={'loading'} />*/}
+      {/*<br />*/}
+      {/*<Heading>Placeholder text</Heading>*/}
+      {/*<br />*/}
       <Oscar>
         <Heading>Oscar goes to Denzel Washington</Heading>
       </Oscar>
@@ -62,6 +64,8 @@ const Home: NextPage = () => {
       <Container
         styles={{ border: '1px solid black', padding: '1rem', display: 'flex' }}
       />
+      <br />
+      <User />
     </div>
   );
 };
