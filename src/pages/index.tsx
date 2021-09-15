@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 
-import { Counter } from '~/components/state/Counter';
+import { Box } from '~/components/context/Box';
+import { ThemeContextProvider } from '~/components/context/ThemeContext';
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +13,9 @@ const Home: NextPage = () => {
         flexDirection: 'column',
       }}
     >
-      <Counter />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   );
 };
